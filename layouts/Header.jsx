@@ -23,7 +23,9 @@ export default class Header extends Component{
   		}
 	}
 	infouser(){
-		return Meteor.user().profile.nombre+" "+Meteor.user().profile.apellido+" "+Meteor.user().profile.tipousuario;
+		if (Meteor.user()){
+			return Meteor.user().profile.nombre+" "+Meteor.user().profile.apellido+" "+Meteor.user().profile.tipousuario;	
+		}
 	}
 	render(){
 		//const name = Meteor.user().profile.nombre;
